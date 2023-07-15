@@ -4,14 +4,13 @@ import PropTypes from 'prop-types';
 const Book = ({
   category, title, author, progress, chapter, id,
 }) => {
-
   const [remove, setRemove] = useState(false);
-  
+
   const removeBook = (e) => {
     setRemove(true);
     // updateBooks(remove, e);
-    console.log(e.target.parentNode.parentNode.parentNode.parentNode.id);
-    };
+    console.log(e.target.parentNode.parentNode.parentNode.parentNode.id, remove);
+  };
 
   return (
     <li id={id}>

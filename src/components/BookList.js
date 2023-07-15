@@ -32,12 +32,23 @@ export default function BookList() {
 
     },
   ]);
+  if (books.length === 0) {
+    setBooks([]);
+  }
 
   return (
     <div>
       <ul>
         {books.map((book) => (
-          <Book key={book.id} id={book.id} category={book.category} title={book.title} author={book.author} progress={book.progress} chapter={book.chapter} />
+          <Book
+            key={book.id}
+            id={book.id}
+            category={book.category}
+            title={book.title}
+            author={book.author}
+            progress={book.progress}
+            chapter={book.chapter}
+          />
         ))}
       </ul>
     </div>
