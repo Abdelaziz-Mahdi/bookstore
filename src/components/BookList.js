@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-// import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 import Book from './Book';
+import AddBook from './AddBook';
 
 export default function BookList() {
   const [books, setBooks] = useState([
     {
-      id: 1,
+      id: uuidv4(),
       title: 'The Hunger Games',
       category: 'Action',
       author: 'Suzanne Collins',
@@ -14,7 +15,7 @@ export default function BookList() {
 
     },
     {
-      id: 2,
+      id: uuidv4(),
       title: 'Dune',
       category: 'Sci-Fi',
       author: 'Frank Herbert',
@@ -23,7 +24,7 @@ export default function BookList() {
 
     },
     {
-      id: 3,
+      id: uuidv4(),
       title: 'The Lord of the Rings',
       category: 'History',
       author: 'J.R.R. Tolkien',
@@ -32,9 +33,15 @@ export default function BookList() {
 
     },
   ]);
-  if (books.length === 0) {
-    setBooks([]);
-  }
+
+  const toAddBook = (book) => {
+    setBooks([...books, book]);
+  };
+
+  const updateBooks = (id) => {
+    const newBooks = books.filter((book) => book.id !== id);
+    setBooks(newBooks);
+  };
 
   return (
     <div>
@@ -48,9 +55,11 @@ export default function BookList() {
             author={book.author}
             progress={book.progress}
             chapter={book.chapter}
+            updateBooks={updateBooks}
           />
         ))}
       </ul>
+      <AddBook toAddBook={toAddBook} />
     </div>
   );
 }
