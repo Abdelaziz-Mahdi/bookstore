@@ -1,15 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 const Book = ({
-  category, title, author, progress, chapter, id,
+  category, title, author, progress, chapter, id, updateBooks,
 }) => {
-  const [remove, setRemove] = useState(false);
-
   const removeBook = (e) => {
-    setRemove(true);
-    // updateBooks(remove, e);
-    console.log(e.target.parentNode.parentNode.parentNode.parentNode.id, remove);
+    updateBooks(e.target.parentNode.parentNode.parentNode.parentNode.id);
   };
 
   return (
@@ -42,12 +38,13 @@ const Book = ({
 };
 
 Book.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   progress: PropTypes.string.isRequired,
   chapter: PropTypes.string.isRequired,
+  updateBooks: PropTypes.func.isRequired,
 };
 
 export default Book;
