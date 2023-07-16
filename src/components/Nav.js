@@ -2,9 +2,6 @@ import React from 'react';
 import { Outlet, Link, NavLink } from 'react-router-dom';
 
 export default function Nav() {
-  const handleClick = (e) => {
-    e.preventDefault();
-  };
   return (
     <>
       {' '}
@@ -25,7 +22,6 @@ export default function Nav() {
             <NavLink
               style={({ isActive }) => (isActive ? { color: '#f5913e' } : {})}
               to="/categories"
-              onClick={handleClick}
             >
               Categories
             </NavLink>
