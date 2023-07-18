@@ -6,16 +6,14 @@ const booksSlice = createSlice({
   name: 'books',
   initialState,
   reducers: {
-    addsABook(state, action) {
-      const newState = state.push(action.payload);
-      return newState;
+    addABook: (state, action) => {
+      state.books = state.books.concat(action.payload);
     },
-    removesABook(state, action) {
-      const newState = state.filter(!action.payload);
-      return newState;
+    removeABook: (state, action) => {
+      state.books = state.books.filter((book) => book.id !== action.payload);
     },
   },
 });
 
-export const { addsABook, removesABook } = booksSlice.actions;
+export const { addABook, removeABook } = booksSlice.actions;
 export default booksSlice.reducer;
