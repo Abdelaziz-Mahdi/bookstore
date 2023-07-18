@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import Book from './Book';
 import AddBook from './AddBook';
 
 export default function BookList() {
+  const booksList = useSelector((state) => state.books);
+
   const [books, setBooks] = useState([]);
 
   // if there is no books in local storage, set the default books
@@ -63,7 +66,7 @@ export default function BookList() {
   return (
     <div>
       <ul>
-        {books.map((book) => (
+        {booksList.map((book) => (
           <Book
             key={book.id}
             id={book.id}
