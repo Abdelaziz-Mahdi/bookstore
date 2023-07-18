@@ -38,7 +38,7 @@
 ### Tech Stack <a name="tech-stack"></a>
 
 <details>
-  <summary>Languages &  bundlers</summary>
+  <summary>Languages & bundlers</summary>
   <ul>
     <li>JS</li>
     <li>React</li>
@@ -51,15 +51,14 @@
 <details>
   <summary>Server</summary>
   <ul>
-    <li>Gethub Pages</li>
-    <li>Netlify</a></li>
+    <li>Render</li>
   </ul>
 </details>
 
 <details>
 <summary>Database</summary>
   <ul>
-    <li></a></li>
+    <li>Bookstore API</li>
   </ul>
 </details>
 
@@ -69,7 +68,9 @@
 
 - **Use GitFlow.**
 - **Single page React app.**
-- **Use ES6 syntax.**
+- **Use Redux in React components.**
+- **Connect to API.(axios with createAsyncThunk)**
+- **Parse a Zeplin design to create a UI**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -92,7 +93,7 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
 - cd my-folder
-- git clone [[https://github.com/Abdelaziz-Ali/Math-Magicians.git](https://github.com/Abdelaziz-Ali/Math-Magicians.git)](https://github.com/Abdelaziz-Ali/bookstore.git)
+- git clone [https://github.com/Abdelaziz-Ali/bookstore.git](https://github.com/Abdelaziz-Ali/bookstore.git)
 
 ### Install
 
@@ -106,8 +107,6 @@ Install this project with:
 To run the project, execute the following command:
 
 - code .
-- git status
-- npm init
 - npm install
 - npm start
 
@@ -121,8 +120,7 @@ npm test
 
 You can deploy this project using:
 
-- Github Pages.
-- Netlify.
+- Render.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -142,7 +140,6 @@ You can deploy this project using:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] Add reducers and actions.
 - [ ] Use Redux in React components.
 - [ ] Connect to API.
 - [ ] Styling.
