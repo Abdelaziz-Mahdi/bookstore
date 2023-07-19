@@ -1,30 +1,35 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { addABook } from '../redux/books/booksSlice';
 
-const AddBook = ({ toAddBook }) => {
+const AddBook = () => {
+  const dispatch = useDispatch();
   const [book, setBook] = useState({
     id: uuidv4(),
     title: '',
     category: 'General',
     author: '',
-    progress: '0%',
-    chapter: 'Introduction',
   });
+
+  // to git the value of the input and set it to the state
   const handleChange = (e) => {
     setBook({ ...book, [e.target.name]: e.target.value });
   };
+
+  // to submit the form
   const handleSubmit = (e) => {
     e.preventDefault();
+    // to assain id to the new stored book in the state
     setBook({ ...book, id: uuidv4() });
-    toAddBook(book);
+    // to add the book to the list
+    dispatch(addABook(book));
+    // to reset the form after submitting
     setBook({
       id: uuidv4(),
       title: '',
       category: 'General',
       author: '',
-      progress: '0%',
-      chapter: 'Introduction',
     });
   };
   return (
@@ -51,10 +56,6 @@ const AddBook = ({ toAddBook }) => {
       </form>
     </div>
   );
-};
-
-AddBook.propTypes = {
-  toAddBook: PropTypes.func.isRequired,
 };
 
 export default AddBook;
