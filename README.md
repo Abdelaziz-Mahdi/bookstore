@@ -140,7 +140,6 @@ You can deploy this project using:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] Use Redux in React components.
 - [ ] Connect to API.
 - [ ] Styling.
 
