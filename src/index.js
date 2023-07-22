@@ -4,6 +4,7 @@ import App from './App';
 import './index.css';
 import store from './redux/store';
 import { fetchBooks } from './redux/books/booksSlice';
+import 'bootstrap/dist/css/bootstrap.css';
 
 store.dispatch(fetchBooks());
 
