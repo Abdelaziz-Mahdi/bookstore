@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
-import { addABook } from '../redux/books/booksSlice';
+import { addBook } from '../redux/books/booksSlice';
 
 const AddBook = () => {
   const dispatch = useDispatch();
   const [book, setBook] = useState({
-    id: uuidv4(),
+    item_id: uuidv4(),
     title: '',
     category: 'General',
     author: '',
@@ -23,10 +23,10 @@ const AddBook = () => {
     // to assain id to the new stored book in the state
     setBook({ ...book, id: uuidv4() });
     // to add the book to the list
-    dispatch(addABook(book));
+    dispatch(addBook(book));
     // to reset the form after submitting
     setBook({
-      id: uuidv4(),
+      item_id: uuidv4(),
       title: '',
       category: 'General',
       author: '',
