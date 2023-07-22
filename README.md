@@ -140,7 +140,6 @@ You can deploy this project using:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] Connect to API.
 - [ ] Styling.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
