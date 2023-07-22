@@ -26,7 +26,7 @@ export const addBook = createAsyncThunk(
   async (book) => {
     try {
       const response = await axios.post(API_URL, book);
-      return response.data;
+      return ([response.data, book]);
     } catch (error) {
       return error;
     }
@@ -71,6 +71,10 @@ const booksSlice = createSlice({
         const bookId = action.payload[1];
         state.books = Object.fromEntries(Object.entries(state.books)
           .filter(([key]) => !key.includes(bookId)));
+      })
+      .addCase(addBook.fulfilled, (state, action) => {
+        const bookData = action.payload[1];
+        state.books = { ...state.books, [bookData.item_id]: [bookData] };
       });
   },
 });
