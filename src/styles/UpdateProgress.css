@@ -1,0 +1,26 @@
+:root {
+  --bubble-gum-pink: #ff5ab7;
+  --black: #1e1e1e;
+  --pinkish-grey: #c7c7c7;
+  --very-light-pink: #c4c4c4;
+  --pale-grey: #f5f6fa;
+  --white: #fafafa;
+  --white-two: #fff;
+  --white-three: #e8e8e8;
+  --black-5: rgba(0, 0, 0, 0.05);
+  --medium-blue: #307bbe;
+  --azure: #0290ff;
+  --cool-blue: #4386bf;
+}
+
+.bc-azure {
+  background-color: var(--azure);
+}
+
+.c-white-two {
+  color: var(--white-two);
+}
+
+.bc-white-two {
+  background-color: var(--white-two);
+}

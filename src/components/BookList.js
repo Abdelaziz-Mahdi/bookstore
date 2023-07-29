@@ -44,7 +44,7 @@ export default function BookList() {
 
   return (
     <div>
-      <ul>
+      <ul className="p-0 container">
         {content}
       </ul>
       <AddBook />
