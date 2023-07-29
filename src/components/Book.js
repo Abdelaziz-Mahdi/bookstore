@@ -12,7 +12,7 @@ const Book = ({
   const dispatch = useDispatch();
   return (
     <li className="bc-white-two row border m-3 p-3">
-      <div className="col-sm-5 mb-3 mb-sm-0">
+      <div className="col-sm-6 mb-3 mb-sm-0">
         <div className="book-info">
           <div className="card-subtitle mb-2 text-body-secondary">{category}</div>
           <h2 className="card-title">{title}</h2>
